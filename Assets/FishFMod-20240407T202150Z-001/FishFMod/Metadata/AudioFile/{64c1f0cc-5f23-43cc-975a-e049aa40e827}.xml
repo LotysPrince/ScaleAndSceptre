@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{64c1f0cc-5f23-43cc-975a-e049aa40e827}">
+		<property name="assetPath">
+			<value>FishHammer1-001.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>2.5</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{54e93d5b-3dc0-4ffa-9454-14b2447cfc02}</destination>
+		</relationship>
+	</object>
+</objects>

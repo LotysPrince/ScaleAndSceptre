@@ -1,0 +1,6 @@
+{431f566a-35b2-45ee-97d2-b81d644b5beb} bank:/Master
+{db0276be-44c9-09ac-119b-32e395b85d73} bank:/Master.strings
+{7b9d317c-7f65-4e1f-8974-8d577677e7b3} bus:/
+{42d15fe2-0019-4b7a-b612-5c21e6346e1d} bus:/Reverb
+{6f75ace1-f1b9-4ba7-84e3-16fe78c108e1} parameter:/Day
+{a3666749-ffee-436d-87f3-344baa9d11d8} parameter:/Night
