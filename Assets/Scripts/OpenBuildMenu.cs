@@ -16,7 +16,6 @@ public class OpenBuildMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        isOpen = false;
     }
 
     // Update is called once per frame
@@ -24,16 +23,16 @@ public class OpenBuildMenu : MonoBehaviour
     {
         if (!isOpen)
         {
-            buildMenu.transform.position = Vector3.MoveTowards(buildMenu.transform.position, new Vector3(-.05f, buildMenu.transform.position.y, -6), 20 * Time.deltaTime);
+            buildMenu.transform.position = Vector3.MoveTowards(buildMenu.transform.position, new Vector3(-150f, buildMenu.transform.position.y, -6), 1500 * Time.deltaTime);
 
         }
         else if (isOpen)
         {
-            buildMenu.transform.position = Vector3.MoveTowards(buildMenu.transform.position, new Vector3(4.5f, buildMenu.transform.position.y, -6), 20 * Time.deltaTime);
+            buildMenu.transform.position = Vector3.MoveTowards(buildMenu.transform.position, new Vector3(150f, buildMenu.transform.position.y, -6), 1500 * Time.deltaTime);
         }
     }
 
-    private void OnMouseDown()
+    public void openMenu()
     {
         if (!isOpen)
         {
@@ -44,5 +43,4 @@ public class OpenBuildMenu : MonoBehaviour
             isOpen = false;
         }
     }
-
 }

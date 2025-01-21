@@ -66,88 +66,54 @@ public class DialogueSystem : MonoBehaviour
 		exitButton.SetActive(false);
 		dialogueBox.SetActive(true);
 
+		triggerChoice = dialogue.triggerChoice;
 		nameText.text = dialogue.name;
 
 		sentences.Clear();
 
 		foreach (string sentence in dialogue.beginningDialogue)
 		{
-			//if sentence doesnt trigger a choice or unlock a blueprint, goes to next sentence
-			if (sentence != "CHOICE" && sentence != "HOUSE1 BLUEPRINT" && sentence != "HERMIT BLUEPRINT" && sentence != "FARM BLUEPRINT")
-			{
-				triggerChoice = false;
-				sentences.Enqueue(sentence);
-			}
-
-
-			//if sentence triggers a choice or unlocks a blueprint, does so
-			else if (sentence == "CHOICE")
-            {
-				triggerChoice = true;
-
-			}
-			else if (sentence == "HOUSE1 BLUEPRINT")
-            {
-				houseSprites.SetActive(true);
-            }
-
-			else if (sentence == "HERMIT BLUEPRINT")
-            {
-				hermitSprites.SetActive(true);
-            }
-			else if (sentence == "FARM BLUEPRINT")
-            {
-				farmSprites.SetActive(true);
-            }
+			sentences.Enqueue(sentence);
 		}
 
 		if (triggerChoice)
-        {
+		{
 			foreach (string sentence2 in dialogue.yesDialogue)
 			{
-				//yesSentences.Enqueue(sentence2);
-				if (sentence2 != "HOUSE1 BLUEPRINT" && sentence2 != "HERMIT BLUEPRINT" && sentence2 != "FARM BLUEPRINT")
-				{
-					yesSentences.Enqueue(sentence2);
-				}
-				else if (sentence2 == "HOUSE1 BLUEPRINT")
-				{
-					houseSprites.SetActive(true);
-				}
+				yesSentences.Enqueue(sentence2);
 
-				else if (sentence2 == "HERMIT BLUEPRINT")
-				{
-					hermitSprites.SetActive(true);
-				}
-				else if (sentence2 == "FARM BLUEPRINT")
-				{
-					farmSprites.SetActive(true);
-				}
 			}
 
 			foreach (string sentence2 in dialogue.noDialogue)
 			{
-				if (sentence2 != "HOUSE1 BLUEPRINT" && sentence2 != "HERMIT BLUEPRINT" && sentence2 != "FARM BLUEPRINT")
-				{
-					noSentences.Enqueue(sentence2);
-				}
-				else if (sentence2 == "HOUSE1 BLUEPRINT")
-				{
-					houseSprites.SetActive(true);
-				}
-
-				else if (sentence2 == "HERMIT BLUEPRINT")
-				{
-					hermitSprites.SetActive(true);
-				}
-				else if (sentence2 == "FARM BLUEPRINT")
-				{
-					farmSprites.SetActive(true);
-				}
+				noSentences.Enqueue(sentence2);
 			}
 		}
 
+
 		DisplayNextSentence();
+
+		/*
+		//if sentence triggers a choice or unlocks a blueprint, does so
+		else if (sentence == "CHOICE")
+		{
+			triggerChoice = true;
+
+		}
+		else if (sentence == "HOUSE1 BLUEPRINT")
+		{
+			houseSprites.SetActive(true);
+		}
+
+		else if (sentence == "HERMIT BLUEPRINT")
+		{
+			hermitSprites.SetActive(true);
+		}
+		else if (sentence == "FARM BLUEPRINT")
+		{
+			farmSprites.SetActive(true);
+		}
+	}*/
 
 	}
 
@@ -354,7 +320,7 @@ public class DialogueSystem : MonoBehaviour
 			audioPlayer.Play();
 
 			//waits (x) seconds before displayed/playing the sound for the next letter
-			yield return new WaitForSeconds(13 * Time.deltaTime);
+			yield return new WaitForSecondsRealtime(13 * Time.deltaTime);
 		}
 	}
 

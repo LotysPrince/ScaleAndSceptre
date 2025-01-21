@@ -50,12 +50,13 @@ public class HermitDialogue : MonoBehaviour
     {
         potentialDialogues[0] = new Dialogue();
         potentialDialogues[0].name = "Hermit";
-        potentialDialogues[0].beginningDialogue = new string[5];
+        potentialDialogues[0].beginningDialogue = new string[4];
         potentialDialogues[0].beginningDialogue[0] = " Hullo...  ";
         potentialDialogues[0].beginningDialogue[1] = " I still live alone... ";
         potentialDialogues[0].beginningDialogue[2] = " And I want to keep it that way. ";
         potentialDialogues[0].beginningDialogue[3] = " I need you to stop building houses near my hut. ";
-        potentialDialogues[0].beginningDialogue[4] = "CHOICE";
+        //potentialDialogues[0].beginningDialogue[4] = "CHOICE";
+        potentialDialogues[0].triggerChoice = true;
 
         potentialDialogues[0].yesDialogue = new string[2];
         potentialDialogues[0].yesDialogue[0] = " Glad to have your understanding. ";
@@ -77,12 +78,13 @@ public class HermitDialogue : MonoBehaviour
 
         potentialDialogues[1] = new Dialogue();
         potentialDialogues[1].name = "Hermit";
-        potentialDialogues[1].beginningDialogue = new string[5];
+        potentialDialogues[1].beginningDialogue = new string[4];
         potentialDialogues[1].beginningDialogue[0] = " ...  ";
         potentialDialogues[1].beginningDialogue[1] = " I was walking in the woods... ";
         potentialDialogues[1].beginningDialogue[2] = " And I found something that could help you make people happy. ";
         potentialDialogues[1].beginningDialogue[3] = " So let me help you out for once.  ";
-        potentialDialogues[1].beginningDialogue[4] = "CHOICE";
+        //potentialDialogues[1].beginningDialogue[4] = "CHOICE";
+        potentialDialogues[1].triggerChoice = true;
 
         potentialDialogues[1].yesDialogue = new string[2];
         potentialDialogues[1].yesDialogue[0] = " Can you see it? ";
@@ -104,12 +106,13 @@ public class HermitDialogue : MonoBehaviour
 
         potentialDialogues[2] = new Dialogue();
         potentialDialogues[2].name = "Hermit";
-        potentialDialogues[2].beginningDialogue = new string[5];
+        potentialDialogues[2].beginningDialogue = new string[4];
         potentialDialogues[2].beginningDialogue[0] = " ...  ";
         potentialDialogues[2].beginningDialogue[1] = " The grand coral is sleeping... ";
         potentialDialogues[2].beginningDialogue[2] = " You're waking it. But that's not a bad thing. ";
         potentialDialogues[2].beginningDialogue[3] = " Have a boon I found in the seaforest. ";
-        potentialDialogues[2].beginningDialogue[4] = "CHOICE";
+        //potentialDialogues[2].beginningDialogue[4] = "CHOICE";
+        potentialDialogues[2].triggerChoice = true;
 
         potentialDialogues[2].yesDialogue = new string[3];
         potentialDialogues[2].yesDialogue[0] = " Enjoy... ";

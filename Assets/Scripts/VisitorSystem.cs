@@ -18,7 +18,8 @@ public class VisitorSystem : MonoBehaviour
     void Start()
     {
         citizenVisiting = false;
-        gameStarted = false;
+        //gameStarted = false;
+        gameStarted = true;
     }
 
     // Update is called once per frame
@@ -72,7 +73,9 @@ public class VisitorSystem : MonoBehaviour
     private void NewVisitor()
     {
         lastVisitor = currentVisitor;
-        currentVisitor = potentialVisitors[Random.Range(0, potentialVisitors.Length)];
+        currentVisitor = potentialVisitors[3];
+        citizenVisiting = true;
+        /*currentVisitor = potentialVisitors[Random.Range(0, potentialVisitors.Length)];
 
         //if its the same visitor twice in a row, rerolls the new visitor
         if(currentVisitor == lastVisitor || currentVisitor == null || currentVisitor == removedVisitor)
@@ -83,6 +86,6 @@ public class VisitorSystem : MonoBehaviour
         else
         {
             citizenVisiting = true;
-        }
+        }*/
     }
 }

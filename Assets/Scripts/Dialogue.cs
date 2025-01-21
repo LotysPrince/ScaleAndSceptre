@@ -17,6 +17,9 @@ public class Dialogue
 	[TextArea(3, 10)]
 	public string[] noDialogue;
 
+	public bool triggerChoice;
+	public string unlockBlueprint;
+
 	public int yesPopChange;
 	public int yesHappChange;
 	public int yesMonChange;

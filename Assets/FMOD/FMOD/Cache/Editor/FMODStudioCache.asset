@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: Assets/FishFMod-20240407T202150Z-001/FishFMod/Build/Desktop/Fish.bank
   Name: Fish
   StudioPath: bank:/Fish
-  lastModified: 638481002747705265
+  lastModified: 638621740775031781
   FileSizes: []
   Exists: 1
 --- !u!114 &-6400073034101547273
@@ -33,7 +33,7 @@ MonoBehaviour:
   Path: Assets/FishFMod-20240407T202150Z-001/FishFMod/Build/Desktop/Dialogue.bank
   Name: Dialogue
   StudioPath: bank:/Dialogue
-  lastModified: 638481002746472669
+  lastModified: 638621740774379110
   FileSizes: []
   Exists: 1
 --- !u!114 &-5958579543320813508
@@ -51,7 +51,7 @@ MonoBehaviour:
   Path: Assets/FishFMod-20240407T202150Z-001/FishFMod/Build/Desktop/Hammer.bank
   Name: Hammer
   StudioPath: bank:/Hammer
-  lastModified: 638481002745509440
+  lastModified: 638621740775051860
   FileSizes: []
   Exists: 1
 --- !u!114 &-4753131689168382224
@@ -69,7 +69,7 @@ MonoBehaviour:
   Path: Assets/FishFMod-20240407T202150Z-001/FishFMod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638481002746138397
+  lastModified: 638621740775061893
   FileSizes: []
   Exists: 1
 --- !u!114 &-4538625351081392029
@@ -200,7 +200,7 @@ MonoBehaviour:
   - {fileID: -4753131689168382224}
   StringsBanks:
   - {fileID: 6294261883038842147}
-  cacheTime: 638481002747705265
+  cacheTime: 638621740775071724
   cacheVersion: 131617
 --- !u!114 &1110152904745348203
 MonoBehaviour:
@@ -297,7 +297,7 @@ MonoBehaviour:
   Path: Assets/FishFMod-20240407T202150Z-001/FishFMod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638481002745838990
+  lastModified: 638621740775071724
   FileSizes:
   - Name: 
     Value: 1066

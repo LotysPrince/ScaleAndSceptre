@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class BuildingSystem : MonoBehaviour
 {
@@ -18,14 +19,14 @@ public class BuildingSystem : MonoBehaviour
     public GameObject priceObj;
     public int currentPrice;
     public int currentLevel;
-    public GameObject level1;
-    public GameObject level2;
-    public GameObject level3;
+    public GameObject farmPrefab;
+    public GameObject housePrefab;
+
+    private Vector3 mousePosition;
 
     // Start is called before the first frame update
     void Start()
     {
-        currentLevel = 0;
     }
 
     // Update is called once per frame
@@ -34,62 +35,43 @@ public class BuildingSystem : MonoBehaviour
         
     }
 
-    private void OnMouseDown()
+    public void spawnFarm()
     {
         currentMoney = int.Parse(currencyObj.GetComponent<Text>().text);
-        currentPrice = int.Parse(priceObj.GetComponent<TextMesh>().text);
+        currentPrice = int.Parse(priceObj.GetComponent<TextMeshProUGUI>().text);
 
         if (currentMoney >= currentPrice)
         {
             FindObjectOfType<OpenBuildMenu>().isOpen = false;
 
-            currentLevel += 1;
-            if (gameObject.name == "HousesBuyButton")
-            {
+            mousePosition = Input.mousePosition;
+            mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
-                if (currentLevel == 1)
-                {
-                    level1.SetActive(true);
-                    priceObj.GetComponent<TextMesh>().text = "300";
-                }
-                else if (currentLevel == 2)
-                {
-                    level1.SetActive(false);
-                    level2.SetActive(true);
-                    priceObj.GetComponent<TextMesh>().text = "600";
-
-                }
-                else if (currentLevel == 3)
-                {
-                    level2.SetActive(false);
-                    level3.SetActive(true);
-                    gameObject.SetActive(false);
-                }
-
-
-            }
-            else if (gameObject.name == "HermitBuyButton")
-            {
-                if (currentLevel == 1)
-                {
-                    level1.SetActive(true);
-                    gameObject.SetActive(false);
-
-                }
-            }
-            else if (gameObject.name == "FarmBuyButton")
-            {
-                if (currentLevel == 1)
-                {
-                    level1.SetActive(true);
-                    gameObject.SetActive(false);
-                    //FindObjectOfType<FarmerDIalogue>().farmsBuilt = true;
-                    FindObjectOfType<VisitorSystem>().removedVisitor = null;
+            Instantiate(farmPrefab, new Vector3(mousePosition.x, mousePosition.y, -5), Quaternion.identity);
 
 
 
-                }
-            }
+            currentMoney -= currentPrice;
+            currencyObj.GetComponent<Text>().text = currentMoney.ToString();
+
+        }
+    }
+
+    public void spawnHouse()
+    {
+        currentMoney = int.Parse(currencyObj.GetComponent<Text>().text);
+        currentPrice = int.Parse(priceObj.GetComponent<TextMeshProUGUI>().text);
+
+        if (currentMoney >= currentPrice)
+        {
+            FindObjectOfType<OpenBuildMenu>().isOpen = false;
+
+            mousePosition = Input.mousePosition;
+            mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+
+            Instantiate(housePrefab, new Vector3(mousePosition.x, mousePosition.y, -5), Quaternion.identity);
+
+
 
             currentMoney -= currentPrice;
             currencyObj.GetComponent<Text>().text = currentMoney.ToString();

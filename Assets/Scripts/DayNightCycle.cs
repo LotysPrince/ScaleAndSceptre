@@ -16,6 +16,8 @@ public class DayNightCycle : MonoBehaviour
     public SpriteRenderer overlay;
     public float colorIncrement;
 
+    public int daySpeedMulti;
+
     /*
     public GameObject housesLevel1;
     public GameObject housesLevel2;
@@ -75,8 +77,10 @@ public class DayNightCycle : MonoBehaviour
         if (dayBG.activeSelf)
         {
             instance.setPaused(false);
+            dayRatio += ((.02f * Time.deltaTime) / 2) * daySpeedMulti;
             CycleFMOD();
             CycleDayTime();
+
         }
 
         else if (!dayBG.activeSelf)
@@ -84,11 +88,10 @@ public class DayNightCycle : MonoBehaviour
             instance.setPaused(true);
             CycleFMOD();
             CycleDayTime();
-            dayRatio += (.02f * Time.deltaTime) / 2;
 
         }
         //Debug.Log(dayRatio);
-        
+
 
 
 
@@ -99,13 +102,13 @@ public class DayNightCycle : MonoBehaviour
         if (dayRatio < 1f && dayRatio > 0.75f || dayRatio < 0.25f ) //daytime
         {
 
-            colorIncrement -= (.028f * Time.deltaTime) /2;
+            colorIncrement -= ((.028f * Time.deltaTime) /2) * daySpeedMulti;
 
         }
         else if (dayRatio > 0.25f && dayRatio < 0.75f) //nightTime
         {
 
-            colorIncrement += (.028f * Time.deltaTime) /2;
+            colorIncrement += ((.028f * Time.deltaTime) /2) * daySpeedMulti;
 
         }
         else if (dayRatio > 1f) //reset to daytime
@@ -165,7 +168,7 @@ public class DayNightCycle : MonoBehaviour
 
             //volume += .01f * Time.deltaTime;
             //volume = Mathf.Clamp(volume, 0.5f, 1);
-            dayFMODparam += (4f * Time.deltaTime) / 2;
+            dayFMODparam += ((4f * Time.deltaTime) / 2) * daySpeedMulti;
             dayFMODparam = Mathf.Clamp(dayFMODparam, 0, 100);
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Day", dayFMODparam);
 
@@ -177,7 +180,7 @@ public class DayNightCycle : MonoBehaviour
 
             //volume -= .01f * Time.deltaTime;
             //volume = Mathf.Clamp(volume, 0.5f, 1);
-            nightFMODparam += (.04f * Time.deltaTime) / 2;
+            nightFMODparam += ((.04f * Time.deltaTime) / 2) * daySpeedMulti;
             nightFMODparam = Mathf.Clamp(nightFMODparam, 0, 1);
             FMODUnity.RuntimeManager.StudioSystem.setParameterByName("Night", nightFMODparam);
 
