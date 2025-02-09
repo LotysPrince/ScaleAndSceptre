@@ -24,9 +24,14 @@ public class HouseBuilding : MonoBehaviour
     public bool zoningMode;
     private int zonedTilesNum;
     public List<GameObject> zonedTiles = new List<GameObject>();
+
+
+    public DialogueSystem dialogueSystem;
+
     // Start is called before the first frame update
     void Start()
     {
+        dialogueSystem = GameObject.Find("Scripts").GetComponent<DialogueSystem>();
         gameObject.transform.name = "House";
         tileGridObject = GameObject.Find("TileGrid");
         tileGridObject.SetActive(true);
@@ -116,6 +121,7 @@ public class HouseBuilding : MonoBehaviour
             {
                 zonedTile.GetComponent<tileManager>().yellowHighlighted = true;
                 Instantiate(houseMiniPrefab, zonedTile.transform.position, Quaternion.identity);
+                dialogueSystem.HousesBuilt += 1;
 
             }
             Destroy(gameObject);

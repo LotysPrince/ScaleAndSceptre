@@ -29,6 +29,10 @@ public class DialogueSystem : MonoBehaviour
 	private Queue<string> yesSentences;
 	private Queue<string> noSentences;
 
+	private string sentence;
+	private string yesSentence;
+	private string noSentence;
+
 	//true/false selectors for triggering choices
 	private bool triggerChoice;
 	private bool yesTriggered;
@@ -51,6 +55,9 @@ public class DialogueSystem : MonoBehaviour
 	public GameObject KidPortrait;
 	public GameObject MomPortrait;
 	public GameObject HermitPortrait;
+
+	//checks total houses built for quest purposes
+	public int HousesBuilt;
 
 	// Use this for initialization
 	void Start()
@@ -117,6 +124,19 @@ public class DialogueSystem : MonoBehaviour
 
 	}
 
+	public void nextButton()
+	{
+		if (dialogueText.text != sentence)
+		{
+			StopAllCoroutines();
+			dialogueText.text = sentence;
+		}
+		else if (dialogueText.text == sentence)
+		{
+			DisplayNextSentence();
+		}
+	}
+
 	//queues the next sentence to be displayed and feeds it into coroutine to animate it over time
 	public void DisplayNextSentence()
 	{
@@ -130,7 +150,7 @@ public class DialogueSystem : MonoBehaviour
 				return;
 			}
 
-			string yesSentence = yesSentences.Dequeue();
+			yesSentence = yesSentences.Dequeue();
 			StopAllCoroutines();
 			StartCoroutine(TypeSentence(yesSentence));
 		}
@@ -143,7 +163,7 @@ public class DialogueSystem : MonoBehaviour
 				return;
 			}
 
-			string noSentence = noSentences.Dequeue();
+			noSentence = noSentences.Dequeue();
 			StopAllCoroutines();
 			StartCoroutine(TypeSentence(noSentence));
 		}
@@ -163,7 +183,7 @@ public class DialogueSystem : MonoBehaviour
 
 				return;
 			}
-			string sentence = sentences.Dequeue();
+			sentence = sentences.Dequeue();
 			StopAllCoroutines();
 			StartCoroutine(TypeSentence(sentence));
 		}
@@ -320,7 +340,7 @@ public class DialogueSystem : MonoBehaviour
 			audioPlayer.Play();
 
 			//waits (x) seconds before displayed/playing the sound for the next letter
-			yield return new WaitForSecondsRealtime(13 * Time.deltaTime);
+			yield return new WaitForSecondsRealtime(.1f);
 		}
 	}
 

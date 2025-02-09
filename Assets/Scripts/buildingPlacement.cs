@@ -22,6 +22,7 @@ public class buildingPlacement : MonoBehaviour
     public GameObject tileGridObject;
     private bool isPlaced;
 
+
     // Start is called before the first frame update
     void Start()
     {

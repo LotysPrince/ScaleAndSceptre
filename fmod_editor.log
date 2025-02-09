@@ -2,14 +2,12 @@
 [LOG] Manager::init                            : maxchannels = 256 studioflags = 00000006 flags 00000000 extradriverdata 0000000000000000.
 [LOG] SystemI::init                            : Initialize version=20221 (141420), maxchannels=256, flags=0x00020000
 [LOG] SystemI::setOutputInternal               : Setting output to 'FMOD WASAPI Output'
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=8, nSamplesPerSec=48000, nAvgBytesPerSec=1536000, nBlockAlign=32, wBitsPerSample=32, cbSize=22.
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x0000063F, SubFormat=00000003-0000-0010-8000-00AA00389B71.
+[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=48000, nAvgBytesPerSec=384000, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
+[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
-[LOG] DownMix::init                            : dspbuffersize: 1024  rate: 48000. output speaker mode: 7, input speaker mode 3
-[LOG] DownMix::init                            : done.
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0000026BE60BC048 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 00000258931E0218 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -22,116 +20,6 @@
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
-[LOG] SystemI::createSound                     : filename = Assets/FishFMod-20240407T202150Z-001/FishFMod/Build/Desktop/Fish.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] Thread::initThread                       : Init FMOD nonblocking thread (0). Affinity: 0x4000000000000003, Priority: 0xFFFF7FFC, Stack Size: 114688, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0000026BE5F593C8, queue head = 0000026BEE7DED88, queue count = 0
-[LOG] SystemI::createSound                     : filename = Assets/FishFMod-20240407T202150Z-001/FishFMod/Build/Desktop/Fish.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0000026BE5F5A808, queue head = 0000026BEE7DED88, queue count = 1
-[LOG] SystemI::createSound                     : filename = Assets/FishFMod-20240407T202150Z-001/FishFMod/Build/Desktop/Fish.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] AsyncThread::add                         : add sound to async queue : soundi = 0000026BE64C8D38, queue head = 0000026BEE7DED88, queue count = 1
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000026BE5F593C8
-[LOG] SystemI::createSoundInternal             :     Create name='Assets/FishFMod-20240407T202150Z-001/FishFMod/Build/Desktop/Fish.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 7506784
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 3680
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000026B35250B10
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Fishies_Night_Fmod_Loop', format=5, channels=2, frequency=48000, lengthbytes=2453920, lengthpcm=9216000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.599579.
-[LOG] Thread::initThread                       :     Init FMOD file thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFC, Stack Size: 65536, Semaphore: No, Sleep Time: 10, Looping: Yes.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000026BE5F593C8
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000026BE5F5A808
-[LOG] SystemI::createSoundInternal             :     Create name='Assets/FishFMod-20240407T202150Z-001/FishFMod/Build/Desktop/Fish.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 7506784
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 3680
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000026B352513D0
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Fishies_Base_FMOD_Loop', format=5, channels=2, frequency=48000, lengthbytes=2482688, lengthpcm=9216000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.523865.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000026BE5F5A808
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000026BE64C8D38
-[LOG] SystemI::createSoundInternal             :     Create name='Assets/FishFMod-20240407T202150Z-001/FishFMod/Build/Desktop/Fish.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 7506784
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 3680
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000026B35250D90
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Fishies_Day_FMOD_Loop', format=5, channels=2, frequency=48000, lengthbytes=2565312, lengthpcm=9216000, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.616241.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000026BE64C8D38
-[LOG] SoundI::release                          : Fishies_Day_FMOD_Loop (0000026BE64C8D38)
-[LOG] SoundI::release                          :     Fishies_Day_FMOD_Loop (0000026BEF325C68)
-[LOG] SoundI::release                          :     Fishies_Day_FMOD_Loop (0000026AE1239A38)
-[LOG] SoundI::release                          : Fishies_Base_FMOD_Loop (0000026BE5F5A808)
-[LOG] SoundI::release                          :     Fishies_Base_FMOD_Loop (0000026BEF326488)
-[LOG] SoundI::release                          :     Fishies_Base_FMOD_Loop (0000026AE123A608)
-[LOG] SoundI::release                          : Fishies_Night_Fmod_Loop (0000026BE5F593C8)
-[LOG] SoundI::release                          :     Fishies_Night_Fmod_Loop (0000026B3517EF98)
-[LOG] SoundI::release                          :     Fishies_Night_Fmod_Loop (0000026BE64C6818)
-[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 4960
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 2336
-[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000996223EF88
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFEDB953F60
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFEDB953F20
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFEDB954040
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFEDB954100
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000026B3527DD78
-[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='ClickBubble', format=5, channels=2, frequency=48000, lengthbytes=1536, lengthpcm=96083, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.160150.
-[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 4960
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 2336
-[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000996223EF88
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFEDB953F60
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFEDB953F20
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFEDB954040
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFEDB954100
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000026B3527DD78
-[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='ClickBubble3', format=5, channels=2, frequency=48000, lengthbytes=1600, lengthpcm=96083, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.168297.
-[LOG] SystemI::createSoundInternal             : Create name='', mode=0x02000202
-[LOG] SystemI::createSoundInternal             : exinfo->cbsize             = 224
-[LOG] SystemI::createSoundInternal             : exinfo->length             = 4960
-[LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 2336
-[LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 000000996223EF88
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFEDB953F60
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFEDB953F20
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFEDB954040
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFEDB954100
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 0000026B3527DD78
-[LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
-[LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
-[LOG] SystemI::createSoundInternal             : Sample 0/1: name='ClickBubble2', format=5, channels=2, frequency=48000, lengthbytes=1568, lengthpcm=96083, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.164197.
-[LOG] SoundI::release                          :  (0000026BE6460A38)
-[LOG] SoundI::release                          :     ClickBubble3 (0000026BEF326488)
-[LOG] SoundI::release                          :  (0000026B3353B538)
-[LOG] SoundI::release                          :     ClickBubble2 (0000026BEF3262E8)
-[LOG] SoundI::release                          :  (0000026BE6460BA8)
-[LOG] SoundI::release                          :     ClickBubble (0000026B268F6038)
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
 [LOG] LiveUpdate::release                      : 
@@ -139,5 +27,3 @@
 [LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] Thread::callback                         : FMOD mixer thread finished.
 [LOG] SystemI::close                           : Closed.
-[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
-[LOG] Thread::callback                         : FMOD file thread finished.

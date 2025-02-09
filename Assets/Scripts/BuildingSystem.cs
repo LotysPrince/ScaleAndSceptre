@@ -24,6 +24,7 @@ public class BuildingSystem : MonoBehaviour
 
     private Vector3 mousePosition;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -70,7 +71,6 @@ public class BuildingSystem : MonoBehaviour
             mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
 
             Instantiate(housePrefab, new Vector3(mousePosition.x, mousePosition.y, -5), Quaternion.identity);
-
 
 
             currentMoney -= currentPrice;

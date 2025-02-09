@@ -18,6 +18,7 @@ public class Dialogue
 	public string[] noDialogue;
 
 	public bool triggerChoice;
+	
 	public string unlockBlueprint;
 
 	public int yesPopChange;
@@ -27,5 +28,14 @@ public class Dialogue
 	public int noPopChange;
 	public int noHappChange;
 	public int noMonChange;
+
+
+	public bool isQuest;
+	public string questTriggerType;
+	public int questTriggerAmount;
+	public string questCompletionType;
+	public int questCompletionAmount;
+	public bool questAdded;
+
 
 }

@@ -6,25 +6,31 @@ using UnityEngine.UI;
 public class HermitDialogue : MonoBehaviour
 {
     private DialogueTrigger triggerScript;
+    public DialogueSystem dialogueSystem;
     private Dialogue currentDialogue;
     private Dialogue newDialogue;
-    private Dialogue[] potentialDialogues;
+    private List<Dialogue> potentialDialogues = new List<Dialogue>();
     private bool firstDialogue;
 
     public GameObject populationObj;
     public GameObject happinessObj;
     public GameObject moneyObj;
 
+    private List<Dialogue> questDialogues = new List<Dialogue>();
+
 
     // Start is called before the first frame update
     void Start()
     {
         firstDialogue = true;
+        dialogueSystem = GameObject.Find("Scripts").GetComponent<DialogueSystem>();
         triggerScript = gameObject.GetComponent<DialogueTrigger>();
         currentDialogue = triggerScript.dialogue;
 
-        potentialDialogues = new Dialogue[3];
 
+        
+
+        createQuestDialogues();
     }
 
     // Update is called once per frame
@@ -41,14 +47,49 @@ public class HermitDialogue : MonoBehaviour
         else
         {
             createNewDialogues();
-            newDialogue = potentialDialogues[Random.Range(0, potentialDialogues.Length)];
+            checkQuestTriggers();
+            newDialogue = potentialDialogues[Random.Range(0, potentialDialogues.Count)];
             changeDialogue();
         }
     }
 
+    private void createQuestDialogues()
+    {
+        questDialogues.Add(new Dialogue());
+        questDialogues[0].name = "Hermit";
+        questDialogues[0].beginningDialogue = new string[5];
+        questDialogues[0].beginningDialogue[0] = "Hullo again...";
+        questDialogues[0].beginningDialogue[1] = "I see the kingdom is becoming established again";
+        questDialogues[0].beginningDialogue[2] = "I'd like if you could help me rebuild my home as well";
+        questDialogues[0].beginningDialogue[3] = "It's fallen apart over the years... but I have the original plans for it...";
+        questDialogues[0].beginningDialogue[4] = "I would greatly appreciate the help... but please keep it away from other buildings if you can...";
+        questDialogues[0].unlockBlueprint = "HermitHouse";
+        questDialogues[0].isQuest = true;
+        questDialogues[0].questTriggerType = "Houses";
+        questDialogues[0].questTriggerAmount = 10;
+        questDialogues[0].questCompletionType = "HermitHouse";
+        questDialogues[0].questCompletionAmount = 1;
+
+    }
+
+
+    private void checkQuestTriggers()
+    {
+        foreach (var dialogue in questDialogues)
+        {
+            if (dialogue.questTriggerType == "Houses")
+            {
+                if (dialogueSystem.HousesBuilt >= dialogue.questTriggerAmount && dialogue.questAdded == false)
+                {
+                    dialogue.questAdded = true;
+                    potentialDialogues.Add(dialogue);
+                }
+            }
+        }
+    }
     private void createNewDialogues()
     {
-        potentialDialogues[0] = new Dialogue();
+        potentialDialogues.Add(new Dialogue());
         potentialDialogues[0].name = "Hermit";
         potentialDialogues[0].beginningDialogue = new string[4];
         potentialDialogues[0].beginningDialogue[0] = " Hullo...  ";
@@ -76,7 +117,7 @@ public class HermitDialogue : MonoBehaviour
 
 
 
-        potentialDialogues[1] = new Dialogue();
+        potentialDialogues.Add(new Dialogue());
         potentialDialogues[1].name = "Hermit";
         potentialDialogues[1].beginningDialogue = new string[4];
         potentialDialogues[1].beginningDialogue[0] = " ...  ";
@@ -104,7 +145,7 @@ public class HermitDialogue : MonoBehaviour
 
 
 
-        potentialDialogues[2] = new Dialogue();
+        potentialDialogues.Add(new Dialogue());
         potentialDialogues[2].name = "Hermit";
         potentialDialogues[2].beginningDialogue = new string[4];
         potentialDialogues[2].beginningDialogue[0] = " ...  ";
