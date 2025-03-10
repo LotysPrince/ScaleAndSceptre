@@ -56,6 +56,7 @@ public class DialogueSystem : MonoBehaviour
 	public GameObject MomPortrait;
 	public GameObject HermitPortrait;
 
+
 	//checks total houses built for quest purposes
 	public int HousesBuilt;
 
@@ -150,9 +151,9 @@ public class DialogueSystem : MonoBehaviour
 				return;
 			}
 
-			yesSentence = yesSentences.Dequeue();
+			sentence = yesSentences.Dequeue();
 			StopAllCoroutines();
-			StartCoroutine(TypeSentence(yesSentence));
+			StartCoroutine(TypeSentence(sentence));
 		}
 		else if (noTriggered)
 		{
@@ -163,9 +164,9 @@ public class DialogueSystem : MonoBehaviour
 				return;
 			}
 
-			noSentence = noSentences.Dequeue();
+			sentence = noSentences.Dequeue();
 			StopAllCoroutines();
-			StartCoroutine(TypeSentence(noSentence));
+			StartCoroutine(TypeSentence(sentence));
 		}
 		else
 		{
@@ -354,6 +355,8 @@ public class DialogueSystem : MonoBehaviour
 			dialogueBox.SetActive(false);
 			exitButton.SetActive(true);
 			gameObject.GetComponent<VisitorSystem>().citizenVisiting = false;
+
+			
 			StopAllCoroutines();
 		}
 	}

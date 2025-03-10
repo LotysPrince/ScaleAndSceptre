@@ -23,12 +23,12 @@ public class OpenBuildMenu : MonoBehaviour
     {
         if (!isOpen)
         {
-            buildMenu.transform.position = Vector3.MoveTowards(buildMenu.transform.position, new Vector3(-150f, buildMenu.transform.position.y, -6), 1500 * Time.deltaTime);
+            buildMenu.transform.position = Vector3.MoveTowards(buildMenu.transform.position, new Vector3(-275f, buildMenu.transform.position.y, -6), 1500 * Time.deltaTime);
 
         }
         else if (isOpen)
         {
-            buildMenu.transform.position = Vector3.MoveTowards(buildMenu.transform.position, new Vector3(150f, buildMenu.transform.position.y, -6), 1500 * Time.deltaTime);
+            buildMenu.transform.position = Vector3.MoveTowards(buildMenu.transform.position, new Vector3(250f, buildMenu.transform.position.y, -6), 1500 * Time.deltaTime);
         }
     }
 

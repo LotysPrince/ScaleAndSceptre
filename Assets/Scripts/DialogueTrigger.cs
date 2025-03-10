@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,6 +20,8 @@ public class DialogueTrigger : MonoBehaviour
     public int noMonChange;
 
     public AudioClip[] voiceClips;
+
+    public GameObject questUI;
 
 
     private void Start()
@@ -56,13 +59,19 @@ public class DialogueTrigger : MonoBehaviour
 
     public void TriggerDialogue()
 	{
+        DialogueSystem dialogueSystem = FindObjectOfType<DialogueSystem>();
         //updates the dialogue system with potential currency changes, then starts dialogue
-        FindObjectOfType<DialogueSystem>().yesPopChange = dialogue.yesPopChange;
-        FindObjectOfType<DialogueSystem>().yesHappChange = dialogue.yesHappChange;
-        FindObjectOfType<DialogueSystem>().yesMonChange = dialogue.yesMonChange;
-        FindObjectOfType<DialogueSystem>().noPopChange = dialogue.noPopChange;
-        FindObjectOfType<DialogueSystem>().noHappChange = dialogue.noHappChange;
-        FindObjectOfType<DialogueSystem>().noMonChange = dialogue.noMonChange;
+        dialogueSystem.yesPopChange = dialogue.yesPopChange;
+        dialogueSystem.yesHappChange = dialogue.yesHappChange;
+        dialogueSystem.yesMonChange = dialogue.yesMonChange;
+        dialogueSystem.noPopChange = dialogue.noPopChange;
+        dialogueSystem.noHappChange = dialogue.noHappChange;
+        dialogueSystem.noMonChange = dialogue.noMonChange;
+
+        if (dialogue.isQuest)
+        {
+            questUI.GetComponent<TextMeshProUGUI>().text = questUI.GetComponent<TextMeshProUGUI>().text + "<br>" + dialogue.name + ": " + dialogue.questCompletionType + " built - " + dialogueSystem.HousesBuilt + "/" + dialogue.questCompletionAmount;
+        }
         FindObjectOfType<DialogueSystem>().StartDialogue(dialogue);
 
 

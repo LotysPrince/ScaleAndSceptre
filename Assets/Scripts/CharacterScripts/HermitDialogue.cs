@@ -70,6 +70,20 @@ public class HermitDialogue : MonoBehaviour
         questDialogues[0].questCompletionType = "HermitHouse";
         questDialogues[0].questCompletionAmount = 1;
 
+        questDialogues.Add(new Dialogue());
+        questDialogues[0].name = "Hermit";
+        questDialogues[0].beginningDialogue = new string[5];
+        questDialogues[0].beginningDialogue[0] = "Hullo its me again...";
+        questDialogues[0].beginningDialogue[1] = "I see you're rebuilding your kingdom..";
+        questDialogues[0].beginningDialogue[2] = "The reef speaks to me its joy";
+        questDialogues[0].beginningDialogue[3] = "As much as I do not like the noise...";
+        questDialogues[0].beginningDialogue[4] = "Please continue...";
+        questDialogues[0].isQuest = true;
+        questDialogues[0].questTriggerType = "Houses";
+        questDialogues[0].questTriggerAmount = 0;
+        questDialogues[0].questCompletionType = "Houses";
+        questDialogues[0].questCompletionAmount = 10;
+
     }
 
 
@@ -89,7 +103,7 @@ public class HermitDialogue : MonoBehaviour
     }
     private void createNewDialogues()
     {
-        potentialDialogues.Add(new Dialogue());
+        /*potentialDialogues.Add(new Dialogue());
         potentialDialogues[0].name = "Hermit";
         potentialDialogues[0].beginningDialogue = new string[4];
         potentialDialogues[0].beginningDialogue[0] = " Hullo...  ";
@@ -167,7 +181,7 @@ public class HermitDialogue : MonoBehaviour
         potentialDialogues[2].noHappChange = -5;
         potentialDialogues[2].noMonChange = 0;
         potentialDialogues[2].noPopChange = 0;
-
+        */
 
 
 

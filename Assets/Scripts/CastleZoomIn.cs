@@ -116,7 +116,7 @@ public class CastleZoomIn : MonoBehaviour
         //zooms in
         if (!zoomFinished)
         {
-            cam.gameObject.transform.position = Vector3.MoveTowards(cam.gameObject.transform.position, new Vector3(0.0900000036f, 2.22000003f, -9f), 20 * Time.deltaTime);
+            cam.gameObject.transform.position = Vector3.MoveTowards(cam.gameObject.transform.position, new Vector3(0, 0, -9f), 40 * Time.deltaTime);
 
             camSize -= 13f * Time.deltaTime;
             camSize = Mathf.Clamp(camSize, .1f, 5f);
@@ -124,7 +124,7 @@ public class CastleZoomIn : MonoBehaviour
         }
 
         //when zoomed in, changes scene and UI
-        if (cam.gameObject.transform.position == new Vector3(0.0900000036f, 2.22000003f, -9) && cam.orthographicSize == .1f)
+        if (cam.gameObject.transform.position == new Vector3(0, 0, -9) && cam.orthographicSize == .1f)
         {
             zoomFinished = true;
 
@@ -141,7 +141,7 @@ public class CastleZoomIn : MonoBehaviour
         if (zoomFinished)
         {
 
-            cam.gameObject.transform.position = Vector3.MoveTowards(cam.gameObject.transform.position, new Vector3(0,0,-10), 20 * Time.deltaTime);
+            cam.gameObject.transform.position = Vector3.MoveTowards(cam.gameObject.transform.position, new Vector3(0,0,-10), 40 * Time.deltaTime);
             camSize += 13f * Time.deltaTime;
             camSize = Mathf.Clamp(camSize, .1f, 5f);
             cam.orthographicSize = camSize;
@@ -177,7 +177,7 @@ public class CastleZoomIn : MonoBehaviour
         //zooms in
         if (!zoomFinished)
         {
-            cam.gameObject.transform.position = Vector3.MoveTowards(cam.gameObject.transform.position, new Vector3(0.0900000036f, 2.22000003f, -9f), 20 * Time.deltaTime);
+            cam.gameObject.transform.position = Vector3.MoveTowards(cam.gameObject.transform.position, new Vector3(0, 0, -9f), 40 * Time.deltaTime);
 
             camSize -= 13f * Time.deltaTime;
             camSize = Mathf.Clamp(camSize, .1f, 5f);
@@ -185,7 +185,7 @@ public class CastleZoomIn : MonoBehaviour
         }
 
         //when zoomed in, changes scenes
-        if (cam.gameObject.transform.position == new Vector3(0.0900000036f, 2.22000003f, -9) && cam.orthographicSize == .1f)
+        if (cam.gameObject.transform.position == new Vector3(0, 0, -9) && cam.orthographicSize == .1f)
         {
             zoomFinished = true;
 
@@ -200,7 +200,7 @@ public class CastleZoomIn : MonoBehaviour
         if (zoomFinished)
         {
 
-            cam.gameObject.transform.position = Vector3.MoveTowards(cam.gameObject.transform.position, new Vector3(0, 0, -10), 20 * Time.deltaTime);
+            cam.gameObject.transform.position = Vector3.MoveTowards(cam.gameObject.transform.position, new Vector3(0, 0, -10), 40 * Time.deltaTime);
             camSize += 13f * Time.deltaTime;
             camSize = Mathf.Clamp(camSize, .1f, 5f);
             cam.orthographicSize = camSize;
@@ -232,7 +232,7 @@ public class CastleZoomIn : MonoBehaviour
         //zooms in
         if (!zoomFinished)
         {
-            cam.gameObject.transform.position = Vector3.MoveTowards(cam.gameObject.transform.position, new Vector3(0.0900000036f, 2.22000003f, -9f), 20 * Time.deltaTime);
+            cam.gameObject.transform.position = Vector3.MoveTowards(cam.gameObject.transform.position, new Vector3(0, 0, -9f), 40 * Time.deltaTime);
 
             camSize -= 13f * Time.deltaTime;
             camSize = Mathf.Clamp(camSize, .1f, 5f);
@@ -240,12 +240,11 @@ public class CastleZoomIn : MonoBehaviour
         }
 
         //when zoomed in, changes scenes
-        if (cam.gameObject.transform.position == new Vector3(0.0900000036f, 2.22000003f, -9) && cam.orthographicSize == .1f)
+        if (cam.gameObject.transform.position == new Vector3(0, 0, -9) && cam.orthographicSize == .1f)
         {
             zoomFinished = true;
-
-            bgDay.SetActive(false);
             bgCastle.SetActive(true);
+            //bgDay.SetActive(false);
             buildMenu.SetActive(false);
 
         }
@@ -253,12 +252,12 @@ public class CastleZoomIn : MonoBehaviour
         //begins zooming out
         if (zoomFinished)
         {
+            Debug.Log("reaching the function");
 
-            cam.gameObject.transform.position = Vector3.MoveTowards(cam.gameObject.transform.position, new Vector3(0, 0, -10), 20 * Time.deltaTime);
+            cam.gameObject.transform.position = Vector3.MoveTowards(cam.gameObject.transform.position, new Vector3(0, 0, -10), 40 * Time.deltaTime);
             camSize += 13f * Time.deltaTime;
             camSize = Mathf.Clamp(camSize, .1f, 5f);
             cam.orthographicSize = camSize;
-
             //activates castle music
             castleVolumeBGM += .5f * Time.deltaTime;
             castleVolumeBGM = Mathf.Clamp(castleVolumeBGM, 0, .08f);
@@ -277,7 +276,7 @@ public class CastleZoomIn : MonoBehaviour
                 exitCastleBttn.SetActive(true);
                 exitCastleBttn.GetComponent<SpriteRenderer>().color = new Color(1, 0, 0.6333122f, 1);
                 exitButtonFish.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
-                gameObject.SetActive(false);
+                //gameObject.SetActive(false);
             }
         }
     }

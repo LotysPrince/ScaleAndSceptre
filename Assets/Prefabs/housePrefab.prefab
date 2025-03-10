@@ -121,8 +121,9 @@ MonoBehaviour:
   hoveringOnTile: 0
   tileHoveringOn: {fileID: 0}
   tileGridObject: {fileID: 0}
-  zoningMode: 0
+  zoningMode: 1
   zonedTiles: []
+  dialogueSystem: {fileID: 0}
 --- !u!50 &5790477002686755302
 Rigidbody2D:
   serializedVersion: 4
